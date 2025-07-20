@@ -1,6 +1,6 @@
-package com.jjoony.assetmanagement.domain.Category.dto;
+package com.jjoony.assetmanagement.domain.category.dto;
 
-import com.jjoony.assetmanagement.domain.Category.entity.Category;
+import com.jjoony.assetmanagement.domain.category.entity.Category;
 import com.jjoony.assetmanagement.domain.member.entity.Member;
 import org.springframework.stereotype.Component;
 

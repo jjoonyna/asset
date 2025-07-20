@@ -1,4 +1,4 @@
-package com.jjoony.assetmanagement.domain.Category.dto;
+package com.jjoony.assetmanagement.domain.category.dto;
 
 import lombok.Builder;
 import lombok.Getter;

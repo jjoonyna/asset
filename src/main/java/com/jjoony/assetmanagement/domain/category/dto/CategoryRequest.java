@@ -1,4 +1,4 @@
-package com.jjoony.assetmanagement.domain.Category.dto;
+package com.jjoony.assetmanagement.domain.category.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;

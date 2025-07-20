@@ -1,6 +1,8 @@
 package com.jjoony.assetmanagement.domain.member.entity;
 
 
+import com.jjoony.assetmanagement.domain.category.entity.Category;
+import com.jjoony.assetmanagement.domain.trasactions.entity.Transactions;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -51,6 +53,12 @@ public class Member {
 
     @Setter
     private String role;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Category> categories = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transactions> transactions = new ArrayList<>();
 
     @Builder
     private Member(String email, String nickname, Boolean gender, String birth,JobType jobType, String role) {

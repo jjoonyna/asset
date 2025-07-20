@@ -1,9 +1,8 @@
-package com.jjoony.assetmanagement.domain.Category.repository;
+package com.jjoony.assetmanagement.domain.category.repository;
 
-import com.jjoony.assetmanagement.domain.Category.entity.Category;
-import com.jjoony.assetmanagement.domain.Category.entity.QCategory;
+import com.jjoony.assetmanagement.domain.category.entity.Category;
+import com.jjoony.assetmanagement.domain.category.entity.QCategory;
 import com.jjoony.assetmanagement.domain.member.entity.Member;
-import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;

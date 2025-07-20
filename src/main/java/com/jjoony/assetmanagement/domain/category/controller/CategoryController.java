@@ -1,11 +1,10 @@
-package com.jjoony.assetmanagement.domain.Category.controller;
+package com.jjoony.assetmanagement.domain.category.controller;
 
-import com.jjoony.assetmanagement.domain.Category.dto.CategoryResponse;
-import com.jjoony.assetmanagement.domain.Category.dto.CategoryRequest;
-import com.jjoony.assetmanagement.domain.Category.service.CategoryService;
+import com.jjoony.assetmanagement.domain.category.dto.CategoryResponse;
+import com.jjoony.assetmanagement.domain.category.dto.CategoryRequest;
+import com.jjoony.assetmanagement.domain.category.service.CategoryService;
 import com.jjoony.assetmanagement.global.auth.PrincipalDetails;
 import io.swagger.v3.oas.annotations.Operation;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -23,7 +22,8 @@ public class CategoryController {
     
     @Operation(summary = "카테고리 생성", description = "사용자 정의 카테고리 생성 api 입니다.")
     @PostMapping
-    public ResponseEntity<CategoryResponse> createCategory(@RequestBody @Validated CategoryRequest categoryRequest, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+    public ResponseEntity<CategoryResponse> createCategory(@RequestBody @Validated CategoryRequest categoryRequest,
+                                                           @AuthenticationPrincipal PrincipalDetails principalDetails) {
 
         CategoryResponse response = categoryService.createCategory(categoryRequest,principalDetails);
         return ResponseEntity.ok(response);
@@ -33,7 +33,7 @@ public class CategoryController {
     @GetMapping
     public ResponseEntity<List<CategoryResponse>> getAllCategories(@AuthenticationPrincipal PrincipalDetails principalDetails) {
         List<CategoryResponse> response = categoryService.getAllCategories(principalDetails);
-        System.out.println("------------------조히회왜안돼"+response);
         return ResponseEntity.ok(response);
     }
+
 }

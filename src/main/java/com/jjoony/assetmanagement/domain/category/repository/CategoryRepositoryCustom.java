@@ -1,6 +1,6 @@
-package com.jjoony.assetmanagement.domain.Category.repository;
+package com.jjoony.assetmanagement.domain.category.repository;
 
-import com.jjoony.assetmanagement.domain.Category.entity.Category;
+import com.jjoony.assetmanagement.domain.category.entity.Category;
 import com.jjoony.assetmanagement.domain.member.entity.Member;
 
 import java.util.List;

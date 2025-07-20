@@ -1,8 +1,12 @@
-package com.jjoony.assetmanagement.domain.Category.entity;
+package com.jjoony.assetmanagement.domain.category.entity;
 
 import com.jjoony.assetmanagement.domain.member.entity.Member;
+import com.jjoony.assetmanagement.domain.trasactions.entity.Transactions;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -10,13 +14,13 @@ import lombok.*;
 public class Category {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long categoryId;
 
     @Setter
     private boolean type;
 
     @Setter
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String name;
 
     private boolean isDefault;
@@ -24,6 +28,8 @@ public class Category {
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
+    @OneToMany
+    private List<Transactions> transactions = new ArrayList<>();
     @Builder
     public Category(boolean type, String name, boolean isDefault, Member member) {
         this.type = type;
